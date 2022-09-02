@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+       <!-- <table name="ezest_declarativeschema" comment="Declarative Schema">-->
+        	<table name="new_ezest_declarativeschema" comment="Declarative Schema" onCreate="migrateDataFromAnotherTable(ezest_declarativeschema)">
+	    	 <column xsi:type="smallint" name="block_id" padding="6" unsigned="false" nullable="false" identity="true"
+	                comment="Entity ID"/>
+	        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Block Title" disable="true"/>
+	        <column xsi:type="varchar" name="new_title" nullable="false" length="255" comment="Block New Title" onCreate="migrateDataFrom(title)" disable="true"/>
+	        <column xsi:type="varchar" name="block_last_title" nullable="false" length="255" comment="Block last title Title" onCreate="migrateDataFrom(new_title)" />
+	        <!-- <column xsi:type="timestamp" name="date_closed" padding="10" comment="Time of event"/> -->
+	         <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="block_id"/>
+        </constraint>
+        </table>
+</schema>

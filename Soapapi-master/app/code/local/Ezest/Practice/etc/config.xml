@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ezest_Practice>
+            <version>0.2</version>
+        </Ezest_Practice>
+    </modules>
+    <frontend>
+        <routers>
+            <practice>
+                <use>standard</use>
+                <args>
+                    <module>Ezest_Practice</module>
+                    <frontName>practice</frontName>
+                </args>
+            </practice>
+        </routers>
+        <layout>
+            <updates>
+                <practice>
+                    <file>practice.xml</file>
+                </practice>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+            <resources>
+                <practice_setup>
+                    <setup>
+                        <module>Ezest_Practice</module>
+                    </setup>
+                </practice_setup>
+             </resources>
+    </global>
+</config>

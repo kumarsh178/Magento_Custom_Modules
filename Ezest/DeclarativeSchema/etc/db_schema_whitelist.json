@@ -1,0 +1,22 @@
+{
+    "ezest_declarativeschema": {
+        "column": {
+            "block_id": true,
+            "title": true,
+            "new_title": true,
+            "block_last_title": true
+        }
+    },
+    "new_ezest_declarativeschema": {
+        "column": {
+            "block_id": true,
+            "title": true,
+            "new_title": true,
+            "block_last_title": true,
+            "date_closed": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
